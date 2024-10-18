@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "f389e903-5c99-401d-9cfd-c54825f2f400",
+		"name": "Learning-GO-API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25888497"
+	},
+	"item": [
+		{
+			"name": "CREATE-BTS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"kel_des\": \"Sampit\",\r\n        \"kab_kota\": \"Kotawaringin Timur\",\r\n        \"prov\": \"Kalimantan Tengah\",\r\n        \"luas_desa\": \"400 Km\",\r\n        \"total_ne\": \"3\",\r\n        \"rasio_ne\": \"1\",\r\n        \"total_ne_4g\": \"1\",\r\n        \"rasio_ne_4g\": \"0\",\r\n        \"kec\": \"Baamang\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/createBTS",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"createBTS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "READ-BTS",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "username",
+						"value": "vinn",
+						"type": "text"
+					},
+					{
+						"key": "password",
+						"value": "KEVIN311",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"kel_des\": \"Sampit\",\r\n    \"kab_kota\": \"Kotim\",\r\n    \"prov\" : \"Kalteng\",\r\n    \"luas_desa\" : \"2 km\",\r\n    \"total_ne\" : \"4\",\r\n    \"rasio_ne\" : \"4\",\r\n    \"total_ne_4g\" : \"5\",\r\n    \"rasio_ne_4g\" : \"10\",\r\n    \"kec\" : \"Baamang\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/dataBTS",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"dataBTS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "READ-BTSByID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"kel_des\": \"Sampit\",\r\n    \"kab_kota\": \"Kotim\",\r\n    \"prov\" : \"Kalteng\",\r\n    \"luas_desa\" : \"2 km\",\r\n    \"total_ne\" : \"4\",\r\n    \"rasio_ne\" : \"4\",\r\n    \"total_ne_4g\" : \"5\",\r\n    \"rasio_ne_4g\" : \"10\",\r\n    \"kec\" : \"Baamang\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/getBTSByID?id=83553",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"getBTSByID"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "83553"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE-BTS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_bts\" : 83555,   \r\n    \"kel_des\": \"Sampit\",\r\n    \"kab_kota\": \"Kotawaringn Timur\",\r\n    \"prov\" : \"Kalimantan Tengah\",\r\n    \"luas_desa\" : \"20 km\",\r\n    \"total_ne\" : \"4\",\r\n    \"rasio_ne\" : \"4\",\r\n    \"total_ne_4g\" : \"5\",\r\n    \"rasio_ne_4g\" : \"10\",\r\n    \"kec\" : \"Ketapang\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/updateBTS",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"updateBTS"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE-BTS",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "{{password}}",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "{{username}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_bts\" : 83553\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/deleteBTS",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"deleteBTS"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
